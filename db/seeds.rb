@@ -16,7 +16,8 @@ users = []
 end
 
 users.each do |user|
-  Console.create(name: 'PS1', year: 2005, description: 'old console', user_id: user.id)
+  consoles = %w[PS1 PS2 PS3 PS4 PS5 WII Switch Nintendo_DS Nintendo_DS_Lite Gameboy]
+  Console.create(name: consoles.sample, year: 2005, description: 'old console, good status', user_id: user.id)
 end
 
 Booking.create!(console_id: Console.last.id, user_id: User.last.id)
