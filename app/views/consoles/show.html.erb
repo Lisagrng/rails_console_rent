@@ -1,0 +1,6 @@
+<h2><%= @console.name %></h2>
+<p><%= @console.year %></p>
+<p><%= @console.description %></p>
+
+<%= link_to 'Delete', console_path(@console),
+  data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} %>

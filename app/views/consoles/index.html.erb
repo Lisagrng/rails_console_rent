@@ -1,4 +1,5 @@
 <h1>All our consoles</h1>
-<%= @consoles.each do |console| %>
+<% @consoles.each do |console| %>
 <li><%= console.name %></li>
+<%= link_to "see this console", console_path(console) %>
 <% end %>
