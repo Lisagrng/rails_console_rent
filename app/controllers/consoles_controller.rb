@@ -1,8 +1,10 @@
 class ConsolesController < ApplicationController
   def index
+    @consoles = Console.all
   end
 
   def new
+    @console = Console.new
   end
 
   def create

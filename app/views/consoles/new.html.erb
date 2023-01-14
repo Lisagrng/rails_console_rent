@@ -1,0 +1,7 @@
+<h2><%= console.name %></h2>
+<%= simple_form_for[@console] do |f|%>
+<%= f.input :name %>
+<%= f.input :year %>
+<%= f.input :description %>
+<%= submit %>
+<% end %>
