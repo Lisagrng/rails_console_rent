@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :consoles do
     resources :bookings, only: %i[new create]
   end
-  resources :bookings, only: %i[delete show index]
+  resources :bookings, only: %i[destroy show index]
   # Defines the root path route ("/")
   # root "articles#index"
 end
