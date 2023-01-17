@@ -1,6 +1,7 @@
 <h1>All my bookings</h1>
 <% @my_bookings.each do |booking| %>
-  <%= booking.console.name %>
-  <%= booking.console.description %>
-  <br><%= link_to "See this booking", booking_path(booking) %>
+  <li><%= booking.console.name %> -
+  <%= booking.console.description %></li>
+  <%= link_to "See this booking", booking_path(booking) %>
 <% end %>
+<br> <%= link_to 'Home', consoles_path %>

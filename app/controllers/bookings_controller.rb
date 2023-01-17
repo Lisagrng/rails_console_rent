@@ -10,8 +10,10 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
+    @booking.user = current_user
+    @booking.console = Console.find(params[:console_id])
     @booking.save
-    redirect_to console_bookings_path(@console)
+    redirect_to booking_path(@booking)
   end
 
   def show
@@ -19,7 +21,7 @@ class BookingsController < ApplicationController
   end
 
   def destroy
-    @booking = booking.find(params[:id])
+    @booking = Booking.find(params[:id])
     @booking.destroy
     redirect_to bookings_path, status: :see_other
   end
