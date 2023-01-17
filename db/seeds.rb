@@ -16,7 +16,7 @@ users = []
 end
 
 users.each do |user|
-  consoles = %w[PS1 PS2 PS3 PS4 PS5 WII Switch Nintendo_DS Nintendo_DS_Lite Gameboy]
+  consoles = %w[PS1 PS2 PS3 PS4 PS5 WII Switch Nintendo_DS Nintendo_DS_Lite Gameboy XBOX]
   Console.create(name: consoles.sample, year: 2005, description: 'old console, good status', user_id: user.id)
 end
 

@@ -1,0 +1,6 @@
+<%= @booking.start_date%>
+<%= @booking.end_date %>
+<%= @booking.price_per_day %>
+<%= link_to "Book the console", new_console_booking_path(@booking) %>
+
+<%= link_to "Delete", booking_path(@booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure ?"} %>
