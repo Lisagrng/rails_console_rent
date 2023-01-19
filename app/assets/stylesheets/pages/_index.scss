@@ -1,2 +1,28 @@
 // Import page-specific CSS files here.
 @import "home";
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Poppins:wght@700');
+
+/* Custom designs */
+@import url(components/_banner.scss);
+@import url(components/_buttons.scss);
+@import url(components/_cards.scss);
+
+.container {
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4 {
+  font-family: Poppins;
+}
+
+a {
+  text-decoration: none;
+}
+
+.text-center {
+  text-align: center;
+}

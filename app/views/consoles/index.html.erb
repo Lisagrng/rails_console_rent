@@ -1,12 +1,18 @@
 <% if user_signed_in? %>
-<h1>All our consoles</h1>
+<div class="container">
+<h1 class="title">All our consoles</h1>
+  <div class="banner"></div>
 
-<% @consoles.each do |console| %>
-  <li><%= console.name %></li>
-  <%= link_to "see this console", console_path(console) %>
-<% end %>
+  <div class="cards">
+  <% @consoles.each do |console| %>
+    <li class="card-name"><%= console.name %></li>
+    <%= link_to "see this console", console_path(console) %>
+  <% end %>
+  </div>
 
-<br>
-<%= link_to 'Add a new console', new_console_path %>
-<br>
-<% end %>
+  <br>
+  <div class="button-new-console">
+    <%= link_to 'Add a new console', new_console_path %>
+  </div>
+  <% end %>
+</div>
