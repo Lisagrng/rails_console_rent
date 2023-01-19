@@ -1,8 +1,12 @@
+<% if user_signed_in? %>
 <h1>All our consoles</h1>
 
 <% @consoles.each do |console| %>
-<li><%= console.name %></li>
-<%= link_to "see this console", console_path(console) %>
+  <li><%= console.name %></li>
+  <%= link_to "see this console", console_path(console) %>
 <% end %>
-<br> <%= link_to 'See my bookings', bookings_path %>
-<br> <%= link_to 'Add a new console', new_console_path %>
+
+<br>
+<%= link_to 'Add a new console', new_console_path %>
+<br>
+<% end %>

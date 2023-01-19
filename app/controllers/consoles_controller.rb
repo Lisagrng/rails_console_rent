@@ -3,6 +3,7 @@ class ConsolesController < ApplicationController
 
   def index
     @consoles = Console.all
+    @console = Console.last
   end
 
   def show
