@@ -46,6 +46,6 @@ class ConsolesController < ApplicationController
   end
 
   def console_params
-    params.require(:console).permit(:name, :year, :description, :address  )
+    params.require(:console).permit(:name, :year, :description, :address)
   end
 end
