@@ -4,6 +4,12 @@ class ConsolesController < ApplicationController
   def index
     @consoles = Console.all
     @console = Console.last
+    @markers = @consoles.geocoded.map do |console|
+      {
+        lat: console.latitude,
+        lng: console.longitude
+      }
+    end
   end
 
   def show
