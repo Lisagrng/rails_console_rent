@@ -14,7 +14,25 @@
     <div class="cards">
     <% @consoles.each do |console| %>
       <div class="card">
-        <img src="https://source.unsplash.com/random" alt="">
+        <% if console.name == "PS2" %>
+          <img src="https://wallpaperaccess.com/full/1389554.jpg" alt="">
+        <% elsif console.name == "Nintendo DS Lite" %>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Nintendo-ds-lite-black.jpg/1280px-Nintendo-ds-lite-black.jpg" alt="">
+        <% elsif console.name == "XBOX" %>
+          <img src="https://images.unsplash.com/photo-1621259182978-fbf93132d53d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8eGJveHxlbnwwfHwwfHw%3D&w=1000&q=80" alt="">
+        <% elsif console.name == "PS5" %>
+          <img src="https://www.shutterstock.com/shutterstock/videos/1066408852/thumb/12.jpg?ip=x480" alt="">
+        <% elsif console.name == "PS3" %>
+          <img src="https://img.redbull.com/images/c_limit,w_1500,h_1000,f_auto,q_auto/redbullcom/2014/08/21/1331673228513_2/playstation-console-jeu-video" alt="">
+        <% elsif console.name == "Switch" %>
+          <img src="https://wallpapercave.com/wp/wp2241800.png" alt="">
+        <% elsif console.name == "Gameboy" %>
+          <img src="https://thumbs.dreamstime.com/b/nintendo-gameboy-et-jeux-classiques-114898364.jpg" alt="">
+        <% elsif console.name == "Game cube" %>
+          <img src="https://images7.alphacoders.com/380/380296.jpg" alt="">
+        <% else %>
+          <img src="https://source.unsplash.com/random" alt="">
+        <% end %>
         <h4><%= console.name %></h4>
         <p><%= console.description %></p>
         <div class="button">
