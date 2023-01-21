@@ -5,15 +5,10 @@
   text-align: center;
   padding: 20px;
   border: 1px solid rgb(230, 230, 230);
-
-  img {
-    width: 175px;
-  }
-
+  margin: 15px;
   p {
     opacity: .5;
   }
-
   a {
     opacity: 1;
     color: #efa133;
@@ -22,7 +17,6 @@
 
 .cards {
   display: flex;
-  justify-content: space-between;
   margin-bottom: 30px;
   flex-wrap: wrap;
 }
@@ -30,11 +24,19 @@
 @media (max-width: 900px) {
   .card {
     margin-bottom: 15px;
+    flex: 1 1 150px;
+    img {
+      width: auto;
+    }
   }
 }
 
 @media (max-width: 500px) {
   .card {
     justify-content: space-around;
+    flex: 1 1 100px;
+    img {
+      width: auto;
+    }
   }
 }
