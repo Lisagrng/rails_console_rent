@@ -1,7 +1,6 @@
 <%= simple_form_for [@console, @booking] do |f|%>
 <%= f.input :start_date %>
 <%= f.input :end_date %>
-<%= f.input :price_per_day %>
+<%# <%= @console.price_per_day %>
 <%= f.submit %>
 <% end %>
-  

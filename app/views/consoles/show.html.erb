@@ -1,8 +1,19 @@
 <h2><%= @console.name %></h2>
-<p><%= @console.year %></p>
-<p><%= @console.description %></p>
+<div class="cards">
+  <div class="card">
+    <p><strong> This console is from: </strong><%=@console.year %></p>
+  </div>
+  <div class="card">
+    <p><strong>Learn more about this console: </strong><%=@console.description %></p>
+  </div>
+  <div class="card">
+    <p><strong>This console is located at: </strong><%= @console.address %></p>
+  </div>
+</div>
 
+<div class="flexbox">
 <br> <%= link_to 'Delete', console_path(@console),
   data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} %>
 <br> <%= link_to 'Edit', edit_console_path %>
 <br> <%= link_to 'Book it', new_console_booking_path(@console) %>
+</div>

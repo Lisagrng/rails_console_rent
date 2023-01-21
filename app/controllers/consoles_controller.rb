@@ -2,8 +2,8 @@ class ConsolesController < ApplicationController
   before_action :console_id, only: %i[show edit update destroy]
 
   def index
-    @consoles = Console.all
     @console = Console.last
+    @consoles = Console.all
     @markers = @consoles.geocoded.map do |console|
       {
         lat: console.latitude,
@@ -46,6 +46,6 @@ class ConsolesController < ApplicationController
   end
 
   def console_params
-    params.require(:console).permit(:name, :year, :description)
+    params.require(:console).permit(:name, :year, :description, :address  )
   end
 end

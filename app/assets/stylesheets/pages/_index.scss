@@ -3,16 +3,13 @@
 
 /* Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Poppins:wght@700');
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
 /* Custom designs */
 @import url(components/_banner.scss);
-// @import url(components/_buttons.scss);
+@import url(components/_buttons.scss);
 @import url(components/_cards.scss);
-.container {
-  margin: 0 auto;
-  padding: 0;
-  box-sizing: border-box;
-}
+@import url(components/_footer.scss);
 
 h1, h2, h3, h4 {
   font-family: Poppins;
