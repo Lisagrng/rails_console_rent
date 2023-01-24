@@ -10,6 +10,7 @@ class ConsolesController < ApplicationController
         lng: console.longitude
       }
     end
+    search
   end
 
   def show
@@ -47,5 +48,13 @@ class ConsolesController < ApplicationController
 
   def console_params
     params.require(:console).permit(:name, :year, :description, :address, :price_per_day)
+  end
+
+  def search
+    if params[:query].present?
+      @consoles = Console.where("name ILIKE ?", "%#{params[:query]}%")
+    else
+      @consoles = Console.all
+    end
   end
 end

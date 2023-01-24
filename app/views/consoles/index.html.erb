@@ -1,15 +1,26 @@
 <% if user_signed_in? %>
 <div class="container">
-  <h1 class="title">Game consol rental</h1>
+  <h1 class="title">Game console rental</h1>
   <div class="banner"></div>
-
+  <br>
     <div style="text-align:center">
       <p class="description">
-        Rent a <strong>new generation console</strong> for a day, a week, or a month. And get the latest games!
+        Rent a <strong>new generation console</strong> for a day, a week, or a month. And get the latest games !
+      <br>
         Do not hesitate to contact us for advice at 01 74 50 03 51.
       </p>
     </div>
     <h2 class="title"> Our available game consoles </h2>
+      <div class="search-bar">
+        <%= form_with url: consoles_path, method: :get, class: "d-flex" do %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Find a console"
+          %>
+          <%= submit_tag "Search", class: "btn-purple" %>
+        <% end %>
+      </div>
 
     <div class="cards">
     <% @consoles.each do |console| %>
@@ -30,6 +41,10 @@
           <img src="https://thumbs.dreamstime.com/b/nintendo-gameboy-et-jeux-classiques-114898364.jpg" alt="">
         <% elsif console.name == "Game cube" %>
           <img src="https://images7.alphacoders.com/380/380296.jpg" alt="">
+        <% elsif console.name == "WII" %>
+          <img src="https://wallpapercave.com/wp/wp7323087.jpg" alt="">
+        <% elsif console.name == "WII" %>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/46/Psp-1000.jpg" alt="">
         <% else %>
           <img src="https://source.unsplash.com/random" alt="">
         <% end %>
@@ -43,11 +58,8 @@
     </div>
 
 
-
     <br>
-    <center>
     <button class="button-20" role="button"><%= link_to " Add a new console", new_console_path%></button>
-    </center>
     <br>
 
     <div style="width: 100%; height: 600px;"
