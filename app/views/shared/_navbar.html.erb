@@ -10,9 +10,21 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
+    <% if user_signed_in? %>
+      <div class="search-bar">
+        <%= form_with url: consoles_path, method: :get, class: "d-flex" do %>
+          <%= text_field_tag :query,
+              params[:query],
+              class: "form-control",
+              placeholder: "Find a console"
+            %>
+          <%= submit_tag "Search", class: "btn-purple" %>
+        <% end %>
+      </div>
+
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
-        <% if user_signed_in? %>
+
           <li class="nav-item active">
             <%= link_to "Home", consoles_path, class: "nav-link" %>
           </li>
@@ -22,8 +34,8 @@
           <li class="nav-item dropdown">
             <%= image_tag "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1663318347/kocvea93n4vyldmclrf1.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Action", "#", class: "dropdown-item" %>
-              <%= link_to "Another action", "#", class: "dropdown-item" %>
+              <%= link_to "Add a new console", new_console_path, class: "dropdown-item" %>
+              <!--<%= link_to "Another action", "#", class: "dropdown-item" %>-->
               <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
             </div>
           </li>

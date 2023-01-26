@@ -2,18 +2,18 @@ class ConsolesController < ApplicationController
   before_action :console_id, only: %i[show edit update destroy]
 
   def index
-    @console = Console.last
-    @consoles = Console.all
+    search
     @markers = @consoles.geocoded.map do |console|
       {
         lat: console.latitude,
-        lng: console.longitude
+        lng: console.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: { console: console })
       }
     end
-    search
   end
 
   def show
+    @review = Review.new
   end
 
   def new

@@ -18,6 +18,12 @@ class BookingsController < ApplicationController
 
   def show
     @booking = Booking.find(params[:id])
+    @console = @booking.console
+    if @booking.start_date == @booking.end_date
+      @price = @console.price_per_day
+    else
+      @price = @console.price_per_day * (@booking.end_date.to_date - @booking.start_date.to_date).to_i
+    end
   end
 
   def destroy

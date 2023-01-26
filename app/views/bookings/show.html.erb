@@ -1,7 +1,7 @@
 <h2> <%= @booking.console.name %></h2>
 <p>It start at:  <%=@booking.start_date%></p>
 <p>It end at: <%= @booking.end_date %></p>
-<p>It will cost: <%= @booking.price_per_day %>$ per day</p>
+<p>It will cost: <%= @price %> $</p>
 
 <br> <%= link_to "Delete", booking_path(@booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure ?"} %>
 <br> <%= link_to 'All my bookings', bookings_path %>

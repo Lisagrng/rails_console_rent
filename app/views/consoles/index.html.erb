@@ -11,16 +11,6 @@
       </p>
     </div>
     <h2 class="title"> Our available game consoles </h2>
-      <div class="search-bar">
-        <%= form_with url: consoles_path, method: :get, class: "d-flex" do %>
-          <%= text_field_tag :query,
-            params[:query],
-            class: "form-control",
-            placeholder: "Find a console"
-          %>
-          <%= submit_tag "Search", class: "btn-purple" %>
-        <% end %>
-      </div>
 
     <div class="cards">
     <% @consoles.each do |console| %>
@@ -56,11 +46,6 @@
       </div>
     <% end %>
     </div>
-
-
-    <br>
-    <button class="button-20" role="button"><%= link_to " Add a new console", new_console_path%></button>
-    <br>
 
     <div style="width: 100%; height: 600px;"
     data-controller="map"
