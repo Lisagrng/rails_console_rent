@@ -1,7 +1,18 @@
-<%= form_with method: :get, remote: true %>
-<h1>All my bookings</h1>
-<% @my_bookings.each do |booking| %>
-  <li><%= booking.console.name %> -
-  <%= booking.console.description %></li>
-  <%= link_to "See this booking", booking_path(booking) %>
-<% end %>
+<div class="container">
+  <h1 class="title">All my bookings</h1>
+  <div class="cards">
+    <% @my_bookings.each do |booking| %>
+      <div class="card">
+        <h3><%= booking.console.name %> - #<%= @value += 1 %></h3>
+        <ul>
+          <li><%= booking.start_date %> start</li>
+          <li><%= booking.end_date %> end</li>
+        </ul>
+        <p><%= booking.console.description %></p>
+        <div class="button">
+          <%= link_to "See this booking", booking_path(booking) %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
