@@ -4,13 +4,13 @@
   <div class="cards">
     <% @my_bookings.each do |booking| %>
       <div class="card">
-        <h3>#<%= @value += 1 %> - <%= booking.console.name %></h3>
+        <h3><%= @value += 1 %> - <%= booking.console.name %></h3>
         <ul>
           <li><%= booking.start_date %> start</li>
           <li><%= booking.end_date %> end</li>
         </ul>
         <p><%= booking.console.description %></p>
-        <div class="button">
+        <div id="button">
           <%= link_to "See this booking", booking_path(booking) %>
         </div>
       </div>

@@ -1,10 +1,10 @@
 <%= simple_form_for @console do |f|%>
-<%= f.input :name %>
+<strong><%= f.input :name %>
 <%= f.input :year %>
 <%= f.input :address,
   input_html: {data: {address_autocomplete_target: "address"}, class: "d-none"},
   wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}} %>
 <%= f.input :description %>
 <%= f.input :price_per_day %>
-<%= f.button :submit, class: "button-show" %>
+<%= f.button :submit, class: "button-show" %></strong>
 <% end %>

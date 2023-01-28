@@ -13,10 +13,12 @@
     opacity: 1;
     color: purple;
     text-decoration: none;
+    align-self: flex-end;
   }
   img {
     width: auto;
     height: 134px;
+    vertical-align: center;
   }
 }
 
@@ -31,7 +33,6 @@
   display: flex;
   flex-wrap: wrap;
 }
-
 
 @media (max-width: 900px) {
   .card {
@@ -55,3 +56,9 @@
   }
 }
 
+.cards #button-sticky {
+  position:fixed;
+  bottom:1%;
+  right:1%;
+  z-index:9999;
+}

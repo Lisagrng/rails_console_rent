@@ -29,11 +29,20 @@
     </div>
   </div>
 
-  <p><strong>Reviews</strong></p>
+  <br>
+  <h2><small>Reviews</small></h2>
+  <br>
+  <br>
   <div class="text-center">
     <div class="d-flex flex-wrap">
-      <small>
-      <div class= "flexbox col-6">
+        <div class="simple-form">
+          <%= simple_form_for [@console, @review] do |f| %>
+            <%= f.input :rating, class: "rating-form" %>
+            <%= f.input :content %>
+            <%= f.button :submit, class: "button-show"%>
+          <% end %>
+        </div>
+      <div class="col-6">
         <div class="list-group">
           <% @console.reviews.each do |review| %>
             <% if review.rating == 5 %>
@@ -80,14 +89,6 @@
           <% end %>
         </div>
       </div>
-        <div class="simple-form">
-          <%= simple_form_for [@console, @review] do |f| %>
-            <%= f.input :rating, class: "rating-form" %>
-            <%= f.input :content %>
-            <%= f.button :submit, class: "button-show"%>
-          <% end %>
-          </small>
-        </div>
     </div>
   </div>
 </div>

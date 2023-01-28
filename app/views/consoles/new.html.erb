@@ -1,9 +1,9 @@
-<h2><%= @console.name %></h2>
-<div class="container">
+<br><h2>Add a new console</h2>
+<div class="container-new-console col-10">
   <%= render "form", consoles: @console %>
-    <div class="button-show"></div>
+
   <div id="right" class="d-flex">
-      <div class="button-new">
+      <div class="button-sticky">
         <%= link_to "Back to list", consoles_path, class: 'w-10' %>
       </div>
   </div>

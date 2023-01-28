@@ -1,6 +1,7 @@
+<br><br><div style="margin:0 auto"  class="container-new-booking col-6 ">
 <%= simple_form_for [@console, @booking] do |f|%>
-<%= f.input :start_date, as: :string, input_html: { data: { controller: 'flatpickr' } }%>
-<%= f.input :end_date, as: :string, input_html: { data: { controller: 'flatpickr' } } %>
-<%# <%= @console.price_per_day %>
-<%= f.submit %>
+<strong><%= f.input :start_date, as: :string, input_html: { data: { controller: 'flatpickr' } }%>
+<%= f.input :end_date, as: :string, input_html: { data: { controller: 'flatpickr' } } %></strong>
+<%= f.button :submit, class:"button-show" %>
 <% end %>
+</div>

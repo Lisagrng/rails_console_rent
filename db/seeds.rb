@@ -16,7 +16,7 @@ users = []
   users << @user
 end
 
-Console.create!(name: "PS1", year: 1994, description: 'Old console, good status', user: @user, price_per_day: 7,
+Console.create!(name: "PS1", year: 1994, description: 'Old console, good status, nice play', user: @user, price_per_day: 7,
                 address: "Grandvelle-et-le-Perrenot, 70190")
 Console.create!(name: "WII", year: 2006, description: 'A bit slow, but comes with nice games', user: @user,
                 price_per_day: 5, address: "24750 Boulazac Isle Manoire")
@@ -25,9 +25,9 @@ console = Console.create!(name: "PSP", year: 2004,
                           user: @user, price_per_day: 10, address: "Vaison-la-Romaine, 84110")
 Console.create!(name: "PS4", year: 2013, description: 'Very good condition, comes with 3 game pads', user: @user,
                 price_per_day: 12, address: "Nesle, 80190")
-Console.create!(name: "Nintendo DS Lite", year: 2006, description: 'The console is very good, but a button is a bit hard
+Console.create!(name: "Nintendo DS Lite", year: 2006, description: 'Nice console, but a button is a bit hard
                 to play with', user: @user, price_per_day: 6, address: "Le Rheu, 35650")
-Console.create!(name: "WII", year: 2006, description: 'Everything works very nicely', user: @user, price_per_day: 9,
+Console.create!(name: "WII", year: 2006, description: 'Everything works very nicely, a good console', user: @user, price_per_day: 9,
                 address: "Saint-Denis-en-Val, 45560")
 Console.create!(name: "PS3", year: 2006, description: 'A bit old but in very good condition', user: @user,
                 price_per_day: 9, address: "93110 Rosny-sous-Bois")
