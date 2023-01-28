@@ -1,6 +1,6 @@
 <%= simple_form_for [@console, @booking] do |f|%>
-<%= f.input :start_date %>
-<%= f.input :end_date %>
+<%= f.input :start_date, as: :string, input_html: { data: { controller: 'flatpickr' } }%>
+<%= f.input :end_date, as: :string, input_html: { data: { controller: 'flatpickr' } } %>
 <%# <%= @console.price_per_day %>
 <%= f.submit %>
 <% end %>
