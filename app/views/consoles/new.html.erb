@@ -1,6 +1,11 @@
 <h2><%= @console.name %></h2>
-<%= render "form", consoles: @console %>
+<div class="container">
+  <%= render "form", consoles: @console %>
 
-<%= link_to consoles_path do %>
-  <p>Back to list</p>
-<% end %>
+  <div class="button-show"></div>
+    <div class="button-new">
+      <%= link_to consoles_path do %>
+        <p>Back to list</p>
+      <% end %>
+    </div>
+</div>

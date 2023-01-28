@@ -8,3 +8,19 @@
 legend ~ div.form-check:first-of-type {
   clear: left;
 }
+
+.mb-3.integer.optional.review_rating {
+  text-align: center;
+  width: 25vw!important;
+}
+
+.mb-3.text.required.review_content {
+  text-align: center;
+  width: 25vw!important;
+}
+
+form#new_review.simple_form.new_review {
+  background-color: white;
+  padding: 20px;
+  border: 1px solid rgb(230, 230, 230);
+}

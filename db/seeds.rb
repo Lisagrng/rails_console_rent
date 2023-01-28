@@ -8,6 +8,7 @@
 Booking.destroy_all
 Console.destroy_all
 User.destroy_all
+Review.destroy_all
 
 users = []
 10.times do |i|
@@ -15,25 +16,28 @@ users = []
   users << @user
 end
 
-Console.create!(name: "PS1", year: 1994, description: 'old console, good status', user: @user, price_per_day: 7,
+Console.create!(name: "PS1", year: 1994, description: 'Old console, good status', user: @user, price_per_day: 7,
                 address: "Grandvelle-et-le-Perrenot, 70190")
-Console.create!(name: "WII", year: 2006, description: 'a bit slow, but comes with nice games', user: @user,
+Console.create!(name: "WII", year: 2006, description: 'A bit slow, but comes with nice games', user: @user,
                 price_per_day: 5, address: "24750 Boulazac Isle Manoire")
-Console.create!(name: "PSP", year: 2004, description: 'My son barely played with it so the condition is perfect',
-                user: @user, price_per_day: 10, address: "Vaison-la-Romaine, 84110")
+console = Console.create!(name: "PSP", year: 2004,
+                          description: 'My son barely played with it so the condition is perfect',
+                          user: @user, price_per_day: 10, address: "Vaison-la-Romaine, 84110")
 Console.create!(name: "PS4", year: 2013, description: 'Very good condition, comes with 3 game pads', user: @user,
                 price_per_day: 12, address: "Nesle, 80190")
-Console.create!(name: "Nintendo DS Lite", year: 2006, description: 'The console is very good but a button is a bit hard
+Console.create!(name: "Nintendo DS Lite", year: 2006, description: 'The console is very good, but a button is a bit hard
                 to play with', user: @user, price_per_day: 6, address: "Le Rheu, 35650")
-Console.create!(name: "WII", year: 2006, description: 'everything works very nicely', user: @user, price_per_day: 9,
+Console.create!(name: "WII", year: 2006, description: 'Everything works very nicely', user: @user, price_per_day: 9,
                 address: "Saint-Denis-en-Val, 45560")
-Console.create!(name: "PS3", year: 2006, description: 'a bit old but in very good condition', user: @user,
+Console.create!(name: "PS3", year: 2006, description: 'A bit old but in very good condition', user: @user,
                 price_per_day: 9, address: "93110 Rosny-sous-Bois")
 Console.create!(name: "Nintendo Switch", year: 2017, description: 'Barely used, and comes with a bunch of games',
                 user: @user, price_per_day: 15, address: "28 Rue du Golf, 36160 Pouligny-Notre-Dame")
-Console.create!(name: "PS1", year: 1994, description: 'this old console works very nicely', user: @user,
+Console.create!(name: "PS1", year: 1994, description: 'This old console works very nicely', user: @user,
                 price_per_day: 12, address: "Jas, 42110")
 Console.create!(name: "XBOX", year: 2013, description: 'This console is super cool to play with', user: @user,
                 price_per_day: 11, address: "86200 Loudun")
 
 Booking.create!(console_id: Console.last.id, user_id: User.last.id)
+
+Review.create!(console_id: console.id, rating: 2, content: "The play wasn't very nice")

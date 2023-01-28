@@ -1,5 +1,6 @@
 <% if user_signed_in? %>
 <div class="container">
+<br>
   <h1 class="title">Game console rental</h1>
   <div class="banner"></div>
   <br>
@@ -43,7 +44,7 @@
         <h4><%= console.name %></h4>
         <p><%= console.description %></p>
         <div class="button">
-          <%= link_to "see this console", console_path(console) %>
+          <%= link_to "See this console", console_path(console) %>
         </div>
       </div>
     <% end %>

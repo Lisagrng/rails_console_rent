@@ -9,11 +9,14 @@ h2 {
 
 .flexbox {
   display: flex;
-  justify-content: space-between;
-  background-color: white;
-
+  justify-content: space-around;
+  background-color: #F4F4F4;
 }
 
-link_to {
+.link_to {
   color: black;
+}
+
+p {
+  text-align: center;
 }

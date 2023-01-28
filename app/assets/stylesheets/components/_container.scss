@@ -3,14 +3,84 @@
   margin: auto;
 }
 
+.container-show {
+  width: 1280px;
+  margin: auto;
+  align-content: center;
+}
+
+.container-show-booking {
+  width: 1000px;
+  margin: auto;
+  align-content: center;
+}
+
+@media(max-width: 1300px) {
+  .container {
+    width: 1100px;
+  }
+
+  .container-show {
+    width: 1100px;
+  }
+
+  .container-show-booking {
+    width: 1100px;
+  }
+}
+
+
+@media(max-width: 1024px) {
+  .container {
+    width: 800px;
+  }
+
+  .container-show {
+    width: 800px;
+  }
+
+  .container-show-booking {
+    width: 800px;
+  }
+}
+
 @media(max-width: 900px) {
   .container {
+    width: 700px;
+  }
+
+  .container-show {
+    width: 700px;
+  }
+
+  .container-show-booking {
+    width: 700px;
+  }
+}
+
+@media(max-width: 700px) {
+  .container {
+    width: 500px;
+  }
+
+  .container-show {
+    width: 500px;
+  }
+  .container-show-booking {
     width: 500px;
   }
 }
 
-@media(max-width: 500px) {
+@media(max-width: 480px) {
   .container {
+    width: 300px;
+  }
+
+  .container-show {
+    width: 300px;
+  }
+
+  .container-show-booking {
     width: 300px;
   }
 }

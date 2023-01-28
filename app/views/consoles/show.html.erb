@@ -1,41 +1,93 @@
-<h2><%= @console.name %></h2>
-<div class="cards">
-  <div class="card">
-    <p><strong> This console is from: </strong><%=@console.year %></p>
-  </div>
-  <div class="card">
-    <p><strong>Learn more about this console: </strong><%=@console.description %></p>
-  </div>
-  <div class="card">
-    <p><strong>This console is located at: </strong><%= @console.address %></p>
-  </div>
-    <div class="card">
-    <p><strong>This console is: </strong><%= @console.price_per_day %><strong> $ a day</strong></p>
-  </div>
-</div>
-
-<div class="flexbox">
-  <br> <%= link_to 'Delete', console_path(@console),
-    data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} %>
-  <br> <%= link_to 'Edit', edit_console_path %>
-  <br> <%= link_to 'Book it', new_console_booking_path(@console) %>
-</div>
-
-<p><strong>Reviews</strong></p>
-<ul class="list-group">
-  <% @console.reviews.each do |review| %>
-    <li class="list-group-item">
-    <%= review.content %></li>
-    <%= link_to "Delete",
-    review_path(review),
-    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-    %>
-  <% end %>
-</ul>
 <br>
+<h2><%= @console.name %></h2>
+<div class="container-show">
+    <div class="cards-color">
+      <div class="card">
+        <p><strong> This console is from: </strong><%=@console.year %></p>
+      </div>
+      <div class="card">
+        <p><strong>Learn more about this console: </strong><%=@console.description %></p>
+      </div>
+      <div class="card">
+        <p><strong>This console is located at: </strong><%= @console.address %></p>
+      </div>
+      <div class="card">
+        <p><strong>This console is: </strong><%= @console.price_per_day %><strong> $ a day</strong></p>
+      </div>
+    </div>
 
-<%= simple_form_for [@console, @review] do |f| %>
-<%= f.input :rating %>
-<%= f.input :content %>
-<%= f.submit %>
-<% end %>
+  <div class="flexbox">
+    <div class="button-show">
+      <%= link_to 'Delete', console_path(@console),
+      data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} %>
+    </div>
+    <div class="button-show">
+      <%= link_to 'Edit', edit_console_path %>
+    </div>
+    <div class="button-show">
+      <%= link_to 'Book it', new_console_booking_path(@console) %>
+    </div>
+  </div>
+
+  <p><strong>Reviews</strong></p>
+  <div class="text-center">
+    <div class="d-flex flex-wrap">
+      <small>
+      <div class= "flexbox col-6">
+        <div class="list-group">
+          <% @console.reviews.each do |review| %>
+            <% if review.rating == 5 %>
+                <li class="list-item">
+                  <%= review.content %><span style="color: gold;">★★★★★</span>
+                  <%= link_to "Delete",
+                    review_path(review), class: "delete-button",
+                    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+                  %>
+                </li>
+              <% elsif review.rating == 4 %>
+                <li class="list-item">
+                  <%= review.content %><span style="color: gold;">★★★★</span>
+                  <%= link_to "[Delete]",
+                    review_path(review), class: "delete-button",
+                    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+                  %>
+                </li>
+              <% elsif review.rating == 3 %>
+                <li class="list-item">
+                  <%= review.content %><span style="color: gold;">★★★</span>
+                  <%= link_to "[Delete]",
+                    review_path(review), class: "delete-button",
+                    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+                  %>
+                </li>
+              <% elsif review.rating == 2 %>
+                <li class="list-item">
+                  <%= review.content %> <span style="color: gold;">★★</span>
+                  <%= link_to "[Delete]",
+                    review_path(review), class: "delete-button",
+                    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+                  %>
+                </li>
+              <% else %>
+                <li class="list-item">
+                  <%= review.content %> <span style="color: gold;">★</span>
+                  <%= link_to "[Delete]",
+                    review_path(review), class: "delete-button",
+                    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+                  %>
+                </li>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+        <div class="simple-form">
+          <%= simple_form_for [@console, @review] do |f| %>
+            <%= f.input :rating, class: "rating-form" %>
+            <%= f.input :content %>
+            <%= f.button :submit, class: "button-show"%>
+          <% end %>
+          </small>
+        </div>
+    </div>
+  </div>
+</div>

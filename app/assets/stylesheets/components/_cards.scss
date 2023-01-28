@@ -11,7 +11,8 @@
   }
   a {
     opacity: 1;
-    color: #efa133;
+    color: purple;
+    text-decoration: none;
   }
   img {
     width: auto;
@@ -24,6 +25,13 @@
   margin-bottom: 30px;
   flex-wrap: wrap;
 }
+
+.cards-color {
+  background-color: #F4F4F4;
+  display: flex;
+  flex-wrap: wrap;
+}
+
 
 @media (max-width: 900px) {
   .card {
@@ -46,3 +54,4 @@
     }
   }
 }
+

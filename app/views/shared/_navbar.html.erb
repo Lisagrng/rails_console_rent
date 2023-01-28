@@ -6,6 +6,7 @@
       </div>
     <% end %>
 
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -25,15 +26,13 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
 
-          <li class="nav-item active">
-            <%= link_to "Home", consoles_path, class: "nav-link" %>
-          </li>
           <li class="nav-item">
-            <%= link_to "My bookings", bookings_path, class: "nav-link" %>
+              <%= link_to "Home", consoles_path, class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
             <%= image_tag "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1663318347/kocvea93n4vyldmclrf1.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+            <%= link_to "My bookings", bookings_path, class: "dropdown-item" %>
               <%= link_to "Add a new console", new_console_path, class: "dropdown-item" %>
               <!--<%= link_to "Another action", "#", class: "dropdown-item" %>-->
               <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>

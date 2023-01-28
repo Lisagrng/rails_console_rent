@@ -1,9 +1,10 @@
+<br>
+<h1 class="title">All my bookings</h1>
 <div class="container">
-  <h1 class="title">All my bookings</h1>
   <div class="cards">
     <% @my_bookings.each do |booking| %>
       <div class="card">
-        <h3><%= booking.console.name %> - #<%= @value += 1 %></h3>
+        <h3>#<%= @value += 1 %> - <%= booking.console.name %></h3>
         <ul>
           <li><%= booking.start_date %> start</li>
           <li><%= booking.end_date %> end</li>

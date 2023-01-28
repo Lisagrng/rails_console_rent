@@ -1,18 +1,20 @@
+<br>
 <h2><%= @booking.console.name %></h2>
-<div class="cards">
-  <div class="card">
-    <p><strong>It start at: </strong><%=@booking.start_date%></p>
-  </div>
-  <div class="card">
-    <p><strong>It end at: </strong><%= @booking.end_date %></p>
-  </div>
-  <div class="card">
-    <p><strong>It will cost: </strong><%= @price %> $</p>
+<div class="container-show-booking">
+    <div class="cards-color">
+      <div class="card">
+        <p><strong>It start at: </strong><%=@booking.start_date%></p>
+      </div>
+      <div class="card">
+        <p><strong>It end at: </strong><%= @booking.end_date %></p>
+      </div>
+      <div class="card">
+        <p><strong>It will cost: </strong><%= @price %> $</p>
   </div>
 </div>
 
 <div class="flexbox">
-  <br> <%= link_to "Delete", booking_path(@booking),
-    data: {turbo_method: :delete, turbo_confirm: "Are you sure ?"} %>
-  <br> <%= link_to 'All my bookings', bookings_path %>
+  <br> <div class="button-show"><%= link_to "Delete", booking_path(@booking),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure ?"} %></div>
+  <br> <div class="button-show"><%= link_to 'All my bookings', bookings_path %></div>
 </div>
